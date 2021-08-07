@@ -1,0 +1,69 @@
+version: '3.7'
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.18.1.0/24"
+        
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#      to run migrations within the code(not externally).
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 172.18.1.4:8000"
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+    networks:
+      app_net:
+        ipv4_address: 172.18.1.4
+
+  db:
+    container_name: postgres_db
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=172.18.1.2
+
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      app_net:
+        ipv4_address: 172.18.1.2
+
+  pgadmin:
+    container_name: pgadmin_gui
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=root@root.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - 5050:80
+
+    networks:
+      app_net:
+        ipv4_address: 172.18.1.3
+    depends_on:
+      - db
+
+volumes:
+  pgadmin_data:
+  postgres_data:
