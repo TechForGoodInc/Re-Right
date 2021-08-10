@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Post,Like, Comment
 
+#Basic serializer created for inside API
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
@@ -12,6 +13,7 @@ class LikeSerializer(serializers.ModelSerializer):
         model = Like
         fields = '__all__'
 
+#I had planned to use this serializer when categorizing them by their title but may be unneccesary for the future
 class PostListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
