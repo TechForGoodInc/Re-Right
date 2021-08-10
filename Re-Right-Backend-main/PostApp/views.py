@@ -10,8 +10,8 @@ from rest_framework import status
 
 # Create your views here.
 
-
-
+#All these API views utilize the REST framework and should be run as such. These can also be tested through Postman
+# The <str:pk> stands for a post's individual ID which can be auto generated or manually inserted for the sake of finding posts
 @api_view(['GET'])
 def post_overview(request):
     api_urls = {
@@ -23,18 +23,22 @@ def post_overview(request):
     }
     return Response(api_urls)
 
+
+#Shows all posts within the databse
 @api_view(['GET'])
 def post_list(request):
     posts = Post.objects.all()
     serializer = PostSerializer(posts, many=True)
     return Response(serializer.data)
 
+#gets the information of one post based on its ID number
 @api_view(['GET'])
 def post_detail(request, pk):
     post = Post.objects.get(id=pk)
     serializer = PostSerializer(post, many=False)
     return Response(serializer.data)
 
+#Allows a user to create a post but the data must be in JSON format
 @api_view(['POST'])
 def post_create(request):
     serializer = PostSerializer(data = request.data)
@@ -42,6 +46,7 @@ def post_create(request):
         serializer.save()
     return Response(serializer.data)
 
+#Allows a user to edit a post but you must have the original post's JSON data to properly edit it
 @api_view(['POST'])
 def post_edit(request, pk):
     post = Post.objects.get(id=pk)
@@ -50,6 +55,7 @@ def post_edit(request, pk):
         serializer.save()
     return Response(serializer.data)
 
+#deletes a post based on the post's ID and will remove it from the database
 @api_view(['DELETE'])
 def post_delete(request, pk):
     post = Post.objects.get(id=pk)
