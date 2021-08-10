@@ -5,8 +5,10 @@ from django.utils import timezone
 import datetime
 from django.utils.translation import gettext_lazy as _
 
+#The post class itself should only take the title, body, tags, and image as user input, the rest should be done automatically
 class Post(models.Model):
 
+    #an enum class based on the Human Rights as stated by the UN
     class Tag(models.TextChoices):
         ARTICLE1 = 'BF', _('We are all Born Free')
         ARTICLE2 = 'DD', _("Don't Discriminate")
@@ -53,7 +55,7 @@ class Post(models.Model):
     objects = models.Manager()
     def __str__(self):
         return self.title
-
+#The getTitle and getBody were placeholder functions used to ask for user input for integration reasons but were not utilized yet
     def getTitle(self):
         title = input("please enter the title of your post")
         self.title = title
