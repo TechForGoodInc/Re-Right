@@ -24,7 +24,7 @@ def post_overview(request):
     return Response(api_urls)
 
 
-#Shows all posts within the databse
+#Shows all posts within the database
 @api_view(['GET'])
 def post_list(request):
     posts = Post.objects.all()
@@ -138,18 +138,20 @@ class PostViewSet(viewsets.ModelViewSet):
         response = {'message': 'Disliked Post so deleted'}
         return Response(response, status=status.HTTP_204_NO_CONTENT)
 
+    #creates a new object in the comment table
     @action(detail=True, methods=['POST'])
     def addComment(self, request, pk=None):
         post = Post.objects.get(id=pk)
         user = request.user
         try:
-            comments = Comment.objects.create(author = user, body = input("Please enter body here"))
+            comments = Comment.objects.create(post = post, author = user, body = input("Please enter body here"))
         except:
             return Response({'message': "Please enter all fields correctly"})
         serializer = CommentSerializer(comments, many=False)
         response = {'message': "Comment Added", 'result': serializer.data}
         return Response(response, status = status.HTTP_200_OK)
 
+    #deletes object from the comment table
     @action(detail=True, methods=['DELETE'])
     def deleteComment(selfself, request, pk=None):
         post = Post.objects.get(id=pk)

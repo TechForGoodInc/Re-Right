@@ -73,12 +73,14 @@ class Like(models.Model):
     class Meta:
         ordering = ["-date"]
 
+#corresponds to the comment table in the database, only user input needed is the body
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = models.TextField()
-    time = models.DateTimeField(default=timezone.now)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE) #the ID of the post this comment is under
+    author = models.ForeignKey(User, on_delete=models.CASCADE) #the ID of the user who posted this comment
+    body = models.TextField() #content of the comment entered by user
+    time = models.DateTimeField(default=timezone.now) #automatically sets value to current time
 
+    #order by the time the comments were posted
     class Meta:
         ordering = ('time',)
 
