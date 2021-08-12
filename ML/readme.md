@@ -3,16 +3,23 @@
 ### What We Implemented:
 
 Hate Speech Detection:
--NLP classification models screening tweets
--Comparison of models built using RNN, Transformers and Feed Forward networks. See HateSpeechDetector_RNN.ipynb and HateSpeechDetector_Transformer.ipynb.
+
+- NLP classification models screening tweets
+
+- Comparison of models built using RNN, Transformers and Feed Forward networks. See HateSpeechDetector_RNN.ipynb and HateSpeechDetector_Transformer.ipynb.
 
 Custom Dataset
--Twitter API utilized to collect user bios and recent tweets
--Data queries to find posts containing different categories of hate speech, plus a control group of random data
--Hand labelling data by hate speech classification
+
+- Twitter API utilized to collect user bios and recent tweets
+
+- Data queries to find posts containing different categories of hate speech, plus a control group of random data
+
+- Hand labelling data by hate speech classification
 
 Data Analysis
--Gaussian Mixture Models for detecting similarities among human rights violation reports. See ClusterHRV_Reports.ipynb
+
+- Gaussian Mixture Models for detecting similarities among human rights violation reports. See ClusterHRV_Reports.ipynb
+
 - Matching Users based on bios (in progress)
 
 ### Next Steps:
@@ -29,11 +36,8 @@ Since there is not yet any ReRight user data to utilize, we began building our o
 
 ### Helpful Materials:
 
-Paper creating dataset on rights violations: "Paragraph-level Rationale Extraction through Regularization: A case study on European Court of Human Rights Cases"
-[https://arxiv.org/abs/2103.13084](https://arxiv.org/abs/2103.13084)
-
-Paper creating custom text pre-processing and transformers for human rights reports:  ""LEGAL-BERT: The Muppets straight out of Law School" 
-[https://aclanthology.org/2020.findings-emnlp.261](https://aclanthology.org/2020.findings-emnlp.261)
+Twitter Developer Account application: 
+[https://developer.twitter.com/en/apply-for-access](https://developer.twitter.com/en/apply-for-access)
 
 Pretrained transformers and text preprocessing models for HRV reports:
 [https://huggingface.co/nlpaueb/legal-bert-base-uncased](https://huggingface.co/nlpaueb/legal-bert-base-uncased)
@@ -47,5 +51,8 @@ General BERT transformer models for transfer learning:
 MediaPipe face detection system: 
 [https://google.github.io/mediapipe/solutions/face_detection](https://google.github.io/mediapipe/solutions/face_detection)
 
-Twitter Developer Account application: 
-[https://developer.twitter.com/en/apply-for-access](https://developer.twitter.com/en/apply-for-access)
+Paper creating dataset on rights violations: "Paragraph-level Rationale Extraction through Regularization: A case study on European Court of Human Rights Cases"
+[https://arxiv.org/abs/2103.13084](https://arxiv.org/abs/2103.13084)
+
+Paper creating custom text pre-processing and transformers for human rights reports:  ""LEGAL-BERT: The Muppets straight out of Law School" 
+[https://aclanthology.org/2020.findings-emnlp.261](https://aclanthology.org/2020.findings-emnlp.261)
