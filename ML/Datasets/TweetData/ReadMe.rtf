@@ -1,48 +1,36 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2580
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww16340\viewh15300\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+This file contains the datasets that we got off Twitter using our Twitter API
+The contents are divided into the following:
 
-\f0\b\fs28 \cf0 This file contains the datasets that we got off Twitter using our Twitter API\
-The contents are divided into the following:\
+8 Datasets we got that are approximately 600 units each (because Python couldn’t handle processing more than 600 units of data at a time):
 
-\f1\b0 \
+5 of the 8 datasets were gathered was based off keywords (we chose our key words based off common human rights issues):
+- KW_Immigrant_Immigrants.xlsx file = Gathered using the key words “Immigrant” and “Immigrants”
+- KW_Women_Rape.xlsx file = Gathered using the key words “Women” and “Rape”
+- KW_Women_Should_Never.xlsx = Gathered using the key words “Women”, “Should”, and “Never”
+- KW_Gay_LGBTQ.xlsx = Gathered using the key words “Gay” and “LGBTQ”
+- KW_Black_People.xlsx = Gathered using the key words “Black” and “People”
 
-\fs26 8 Datasets we got that are approximately 600 units each (because Python couldn\'92t handle processing more than 600 units of data at a time):\
-\
-5 of the 8 datasets were gathered was based off keywords (we chose our key words based off common human rights issues):\
-- KW_Immigrant_Immigrants.xlsx file = Gathered using the key words \'93Immigrant\'94 and \'93Immigrants\'94\
-- KW_Women_Rape.xlsx file = Gathered using the key words \'93Women\'94 and \'93Rape\'94\
-- KW_Women_Should_Never.xlsx = Gathered using the key words \'93Women\'94, \'93Should\'94, and \'93Never\'94\
-- KW_Gay_LGBTQ.xlsx = Gathered using the key words \'93Gay\'94 and \'93LGBTQ\'94\
-- KW_Black_People.xlsx = Gathered using the key words \'93Black\'94 and \'93People\'94\
-\
-3 of the 8 datasets we gathered was randomly generated:\
-- RandomHateTweets.xlsx\
-- RandomHateTweets2.xlsx\
-- RandomHateTweets3.xlsx\
-\
+3 of the 8 datasets we gathered was randomly generated:
+- RandomHateTweets.xlsx
+- RandomHateTweets2.xlsx
+- RandomHateTweets3.xlsx
 
-\f0\b\fs28 How we organized our data:\
-\
+How we organized our data:
 
-\f1\b0\fs26 Our Columns are the following:\
-- Text = the actual tweets\
-	- Here, we put everything on one line, removed all the emojis, and removed the beginning @ tags.\
-- User = The twitter username that wrote the tweet\
-- ID = The ID of the user\
-- Hate = Classifying the tweet to be either hate speech, no hate speech, or referring to hate speech/some kind of human rights violation.\
-	- 0 = No hate speech\
-	- 1 = Hate speech\
-	- 2 = Referring to hate speech/some kind of human rights violation\
-\
+Our Columns are the following:
+- Text = the actual tweets
+	- Here, we put everything on one line, removed all the emojis, and removed the beginning @ tags.
+- User = The twitter username that wrote the tweet
+- ID = The ID of the user
+- Hate = Classifying the tweet to be either hate speech, no hate speech, or referring to hate speech/some kind of human rights violation.
+	- 0 = No hate speech
+	- 1 = Hate speech
+	- 2 = Referring to hate speech/some kind of human rights violation
 
-\f0\b\fs28 IMPORTANT NOTES:\
-\
+IMPORTANT NOTES:
 
-\f1\b0\fs26 Unfortunately we weren\'92t able to fully finish formatting our data. All 3 of the random hate speech files still contain emojis and have not been put on the same line (there is still indentation). However, that should be easily solved with some code to preprocess the text. The RandomHateTweets3.xlsx file has not been organized or processed yet at all. Therefore, full tweets are not present in the \'93text\'94 columns. When we originally received the data, the API had only printed out the first couple words of each tweet and then truncated the rest, followed by a link to the original tweet. So we had to go through and manually retrieve and copy and paste each tweet onto the excel. Therefore, there is still one document where this has not been done yet which is the third Random Hate Tweet file. \
-\
-\
-}
+Unfortunately we weren’t able to fully finish formatting our data. All 3 of the random hate speech files still contain emojis and have not been put on the same line 
+(there is still indentation). However, that should be easily solved with some code to preprocess the text. The RandomHateTweets3.xlsx file has not been organized or 
+processed yet at all. Therefore, full tweets are not present in the “text” columns. When we originally received the data, the API had only printed out the first couple 
+words of each tweet and then truncated the rest, followed by a link to the original tweet. So we had to go through and manually retrieve and copy and paste each tweet 
+onto the excel. Therefore, there is still one document where this has not been done yet which is the third Random Hate Tweet file. 
