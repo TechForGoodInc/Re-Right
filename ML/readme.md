@@ -36,26 +36,26 @@ Since there is not yet any ReRight user data to utilize, we began building our o
 
 ### Helpful Materials:
 
-Twitter Developer Account application: 
+- Twitter Developer Account application: 
 [https://developer.twitter.com/en/apply-for-access](https://developer.twitter.com/en/apply-for-access)
 
-Google Colab (free ML coding platform with access to GPU):
+- Google Colab (free ML coding platform with access to GPU):
 https://colab.research.google.com/notebooks/intro.ipynb?authuser=1#recent=true
 
-Pretrained transformers and text preprocessing models for HRV reports:
+- Pretrained transformers and text preprocessing models for HRV reports:
 [https://huggingface.co/nlpaueb/legal-bert-base-uncased](https://huggingface.co/nlpaueb/legal-bert-base-uncased)
 
-Public Kaggle hate speech dataset:
+- Public Kaggle hate speech dataset:
 [https://www.kaggle.com/mathurinache/ecthrnaacl2021](https://www.kaggle.com/mathurinache/ecthrnaacl2021)
 
-General BERT transformer models for transfer learning:
+- General BERT transformer models for transfer learning:
 [https://tfhub.dev/google/collections/bert/1](https://tfhub.dev/google/collections/bert/1)
 
-MediaPipe face detection system: 
+- MediaPipe face detection system: 
 [https://google.github.io/mediapipe/solutions/face_detection](https://google.github.io/mediapipe/solutions/face_detection)
 
-Paper creating dataset on rights violations: "Paragraph-level Rationale Extraction through Regularization: A case study on European Court of Human Rights Cases"
+- Paper creating dataset on rights violations: "Paragraph-level Rationale Extraction through Regularization: A case study on European Court of Human Rights Cases"
 [https://arxiv.org/abs/2103.13084](https://arxiv.org/abs/2103.13084)
 
-Paper creating custom text pre-processing and transformers for human rights reports:  ""LEGAL-BERT: The Muppets straight out of Law School" 
+- Paper creating custom text pre-processing and transformers for human rights reports:  ""LEGAL-BERT: The Muppets straight out of Law School" 
 [https://aclanthology.org/2020.findings-emnlp.261](https://aclanthology.org/2020.findings-emnlp.261)
