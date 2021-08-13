@@ -39,6 +39,9 @@ Since there is not yet any ReRight user data to utilize, we began building our o
 Twitter Developer Account application: 
 [https://developer.twitter.com/en/apply-for-access](https://developer.twitter.com/en/apply-for-access)
 
+Google Colab (free ML coding platform with access to GPU):
+https://colab.research.google.com/notebooks/intro.ipynb?authuser=1#recent=true
+
 Pretrained transformers and text preprocessing models for HRV reports:
 [https://huggingface.co/nlpaueb/legal-bert-base-uncased](https://huggingface.co/nlpaueb/legal-bert-base-uncased)
 
