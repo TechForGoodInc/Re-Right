@@ -1,0 +1,10 @@
+SELECT *
+FROM  (
+    SELECT
+          *,
+          ROW_NUMBER()
+              OVER (PARTITION BY username, id, description, name)
+              row_number
+      FROM `corded-key-319818.tweets_data.Black hate tweets 6`
+)
+WHERE row_number = 1 AND description != '';
